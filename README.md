@@ -6,6 +6,19 @@ To address this issue, AWS introduced [Lambda Layers](https://docs.aws.amazon.co
 
 Shortly after the announcement, the Serverless framework created the [following example](https://www.serverless.com/blog/container-support-for-lambda) to demonstrate how to use the new feature. This blog post will break down that example by building the project from scratch. All the code for this project can be found [on my GitHub](https://github.com/ajcwebdev/ajcwebdev-docker-lambda).
 
+## Outline
+
+* [Project Structure](#project-structure)
+* [Serverless YAML Configuration File](#serverless-yaml-configuration-file)
+  * [AWS Provider](#aws-provider)
+  * [Functions Property](#functions-property)
+* [Dockerfile](#dockerfile)
+* [Function Handler](#function-handler)
+* [Deploy to AWS](#deploy-to-aws)
+  * [Configure AWS Credentials](#configure-aws-credentials)
+  * [Run Serverless Deploy Command](#run-serverless-deploy-command)
+  * [Invoke the Deployed Function](#invoke-the-deployed-function)
+
 ## Project Structure
 
 Instead of globally installing the Serverless CLI, we have installed the `serverless` package as a local dependency in our project. As a consequence, to execute `sls` commands we must prefix the commands with `yarn` or `npx`. You can refer to the [official Serverless documentation](https://www.serverless.com/framework/docs/getting-started) if you prefer to install the CLI globally.
