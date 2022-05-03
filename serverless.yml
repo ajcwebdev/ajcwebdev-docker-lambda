@@ -1,15 +1,11 @@
 service: ajcwebdev-docker-lambda
-frameworkVersion: '2'
-
+frameworkVersion: '3'
 provider:
   name: aws
-  region: us-west-1
-  lambdaHashingVersion: 20201221
   ecr:
     images:
       appimage:
         path: ./
-
 functions:
   hello:
     image:
